@@ -1,0 +1,33 @@
+# Creates insertion sort function
+def insertion_sort(arr):
+
+    # Starts from second element
+    for i in range(1, len(arr)):
+
+        # Stores current value
+        key = arr[i]
+
+        # Starts checking previous elements
+        j = i - 1
+
+        # Moves larger elements to the right
+        while j >= 0 and arr[j] > key:
+
+            # Shifts element right
+            arr[j + 1] = arr[j]
+
+            # Moves backward
+            j -= 1
+
+        # Inserts key into correct position
+        arr[j + 1] = key
+
+    # Returns sorted array
+    return arr
+
+
+# Accepts numbers from user
+arr = list(map(int, input("Enter numbers: ").split()))
+
+# Displays sorted result
+print("Sorted:", insertion_sort(arr))
